@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+                name="newNoteViewModel"
+                type="com.apps.noteme.noteDetail.NoteDetailViewModel" />
+    </data>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:animationCache="true"
+            android:clickable="true"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:fadeScrollbars="true"
+            android:fadingEdge="vertical"
+            android:fillViewport="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:animationCache="true"
+                android:gravity="fill_vertical"
+                android:orientation="vertical">
+
+            <EditText
+                    android:id="@+id/title_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="0"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:hint="@string/title"
+                    android:importantForAutofill="no"
+                    android:inputType="textAutoCorrect|textMultiLine|text|textAutoComplete"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@={newNoteViewModel.openedNote.title}"
+                    android:textColor="@color/text"
+                    android:textColorHighlight="@color/text"
+                    android:textColorHint="@color/textHint"
+                    android:textColorLink="@color/text"
+                    android:textCursorDrawable="@color/text"
+                    android:textSize="20sp"
+                    app:fontFamily="sans-serif-medium" />
+
+            <EditText
+                    android:id="@+id/content_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:autofillHints=""
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="@string/note"
+                    android:inputType="textAutoCorrect|textMultiLine|text|textAutoComplete"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@={newNoteViewModel.openedNote.content}"
+                    android:textColor="@color/text"
+                    android:textColorHighlight="@color/text"
+                    android:textColorHint="@color/textHint"
+                    android:textColorLink="@color/text"
+                    android:textCursorDrawable="@color/text"
+                    app:fontFamily="sans-serif-light" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

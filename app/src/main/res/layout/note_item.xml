@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="note"
+                type="com.apps.noteme.database.Note" />
+
+        <variable
+                name="clickListener"
+                type="com.apps.noteme.app.NoteListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/note_shape"
+            android:onClick="@{() -> clickListener.onClick(note)}">
+
+        <TextView
+                android:id="@+id/title_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{note.title}"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/text"
+                android:textColorLink="@android:color/black"
+                android:textCursorDrawable="@color/text"
+                app:fontFamily="sans-serif-medium"
+                app:layout_constraintBottom_toTopOf="@+id/content_edit_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/title" />
+
+        <TextView
+                android:id="@+id/content_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@{note.content}"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/text"
+                android:textColorLink="@color/text"
+                android:textCursorDrawable="@color/text"
+                app:fontFamily="sans-serif-light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_edit_text"
+                tools:text="@string/content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

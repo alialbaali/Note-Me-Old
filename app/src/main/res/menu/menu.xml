@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Grid" android:visible="true" android:enabled="true" android:checkable="false"
+          app:showAsAction="ifRoom" android:icon="@drawable/ic_view_compact_black_24dp_medium"/>
+</menu>
